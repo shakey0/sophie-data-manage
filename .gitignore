@@ -1,1 +1,3 @@
 seed_prod_database.py
+.env
+__pycache__/
