@@ -10,6 +10,8 @@ CREATE TABLE all_entries (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   order_index INTEGER
 );
+CREATE INDEX idx_super_id ON all_entries (super_id);
+CREATE INDEX idx_entry_type ON all_entries (entry_type);
 
 -- Create the random hex generator function
 CREATE OR REPLACE FUNCTION generate_random_hex()
