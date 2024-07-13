@@ -17,10 +17,12 @@ CREATE INDEX idx_entry_type ON all_entries (entry_type);
 CREATE OR REPLACE FUNCTION generate_random_hex()
 RETURNS TEXT AS $$
 DECLARE
-    hex_code TEXT;
+    hex_code_a TEXT;
+    hex_code_b TEXT;
 BEGIN
-    hex_code := lpad(to_hex(floor(random() * 4294967295)::bigint), 8, '0');
-    RETURN hex_code;
+    hex_code_a := lpad(to_hex(floor(random() * 4294967295)::bigint), 8, '0');
+    hex_code_b := lpad(to_hex(floor(random() * 4294967295)::bigint), 8, '0');
+    RETURN hex_code_a || hex_code_b;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -40,4 +42,6 @@ FOR EACH ROW
 EXECUTE FUNCTION assign_super_id();
 
 
-INSERT INTO all_entries (entry_type, name, data, order_index) VALUES ('Asophie', 'name1', '["Screenshot from 2024-07-07 11-09-29-6a6d4249-c904-4b35-a710-f162c3a3b56b.webp", "Screenshot from 2024-07-07 11-15-31-d9dfe1a1-248d-41fe-8b01-193fdfedd341.webp"]', 1);
+INSERT INTO all_entries (entry_type, name, info, data, order_index) VALUES ('MAsophie', '', '{"desc": "Sophie is a very funny cat although very bad at eating.", "date": "2010-07-10"}', '["sophie eating.jpg"]', 1);
+INSERT INTO all_entries (entry_type, name, info, data, order_index) VALUES ('AAsophie', 'Not Nice Data', '{"desc": "Horrible data and not anything anyone wants to see on a lovely cat website.", "date": "2018-07-12"}', '["Screenshot from 2024-07-07 11-09-29-6a6d4249-c904-4b35-a710-f162c3a3b56b.webp", "Screenshot from 2024-07-07 11-15-31-d9dfe1a1-248d-41fe-8b01-193fdfedd341.webp"]', 1);
+INSERT INTO all_entries (entry_type, name, info, data, order_index) VALUES ('AAsophie', 'Beautiful Sophie', '{"desc": "Such a lovely elegant cat who really believed she is the queen of all cats.", "date": null}', '["sophie_on_bed.jpg", "sophie_santa.jpg"]', 2);
