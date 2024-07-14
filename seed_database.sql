@@ -43,5 +43,6 @@ EXECUTE FUNCTION assign_super_id();
 
 
 INSERT INTO all_entries (entry_type, name, info, data, order_index) VALUES ('MAsophie', '', '{"desc": "Sophie is a very funny cat although very bad at eating.", "date": "2010-07-10"}', '["sophie eating.jpg"]', 1);
-INSERT INTO all_entries (entry_type, name, info, data, order_index) VALUES ('AAsophie', 'Not Nice Data', '{"desc": "Horrible data and not anything anyone wants to see on a lovely cat website.", "date": "2018-07-12"}', '["Screenshot from 2024-07-07 11-09-29-6a6d4249-c904-4b35-a710-f162c3a3b56b.webp", "Screenshot from 2024-07-07 11-15-31-d9dfe1a1-248d-41fe-8b01-193fdfedd341.webp"]', 1);
+INSERT INTO all_entries (entry_type, name, info, data, order_index) VALUES ('AAsophie', 'Very Lazy Sophie', '{"desc": "As usual Sophie is sleeping and not bothering to make valuable use of the infinite amounts of free time she gets each day.", "date": "2018-07-12"}', '["1720878791382.jpg", "Sophie_Heater_Basket.jpg"]', 1);
 INSERT INTO all_entries (entry_type, name, info, data, order_index) VALUES ('AAsophie', 'Beautiful Sophie', '{"desc": "Such a lovely elegant cat who really believed she is the queen of all cats.", "date": null}', '["sophie_on_bed.jpg", "sophie_santa.jpg"]', 2);
+INSERT INTO all_entries (entry_type, name, info, data, order_index) VALUES ('AAsophie', 'Sophie the Explorer', '{"desc": "Sophie is always curious and loves to explore new places.", "date": "2023-09-12"}', '["sophie-basket-1.jpg", "sophie-basket-2.jpg", "sophie-basket-3.jpg", "sophie-basket-4.jpg"]', 3);
